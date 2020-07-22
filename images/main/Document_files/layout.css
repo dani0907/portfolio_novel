@@ -1,0 +1,171 @@
+/* page common */
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+html{
+    font-size: 16px;
+}
+body{
+    color: #333;
+    font-family: "Lato","Noto Sans KR","돋움",sans-serif;
+}
+:root{
+    --green-color:#2bb673;
+    --blue-color:#0ba9b5;
+}
+
+/* skip */
+#skip a{
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f00;
+    color: #fff;
+    position: fixed;
+    left: -999999px;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+#skip a:focus{
+    left: 0;
+}
+/* header */
+#header{
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    color: #888;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+#header:after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 100px;
+    background-color: #d9d9d9;
+    opacity: 0;
+    transition: 0.25s ease;
+}
+#header.on{
+    background-color: #fff;
+    height: 300px;
+}
+#header.on:after{
+    opacity: 1;
+}
+#logo{
+    float: left;
+    margin-left: 50px;
+}
+#gnb{
+    float: left;
+    margin-left: 50px;
+    text-align: center;
+}
+#gnb .gnbList > li{
+    float: left;
+}
+#gnb .gnbList .depth01{
+    font-size: 1rem;
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 30px;
+    position: relative;
+}
+#gnb .gnbList > li:hover .depth01:after{
+    transform: scaleX(1);
+}
+#gnb .gnbList .depth01:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #000;
+    transition: 0.25s ease;
+    transform: scaleX(0);
+}
+
+#gnb .gnbList .depth02{
+    margin-top: 40px;
+}
+#gnb .gnbList .depth02 a{
+    display: block;
+    padding: 5px 0;
+}
+#header .util{
+    float: right;
+}
+#header .util .language{
+    float: left;
+    margin-top: 34px;
+}
+#header .util .language a{
+    display: block;
+    float: left;
+    width: 50px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #eee;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+#header .util .language a.on{
+    background-image: linear-gradient(
+        90deg, rgb(43,182,116) 0%,rgb(12,169,180) 100%
+        );
+        color: #fff;
+}
+#header .util .language a:nth-child(1){
+    border-radius: 100px 0 0 100px;    
+}
+#header .util .language a:nth-child(2){
+    border-radius: 0 100px 100px 0;
+    /* 상우하좌 */
+}
+
+#header .util .btnAll{
+    float: left;
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+#header .util .btnAll span{
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #999;
+    position: absolute;
+    left: 35px;
+}
+#header .util .btnAll span:nth-child(1){top:39px}
+#header .util .btnAll span:nth-child(2){top:49px}
+#header .util .btnAll span:nth-child(3){top:59px}
+
+#footer{
+    padding: 100px 0;
+    background-color: #fff;
+    font-size: 0.825rem;
+}
+#footer .container{
+    width: 1700px;
+    margin: auto;
+}
+
+#footer .container .util li{
+    float: left;
+    margin-right: 15px;
+}
